@@ -30,6 +30,7 @@ body{
 }
 
 input[type="email"]{
+    display:inline-block;
     height: 45px;
     width: 300px;
     border-radius: 10px;
@@ -47,6 +48,7 @@ input[type="email"]{
 }
 
 input[type="password"]{
+    display:inline-block;
     height: 45px;
     width: 300px;
     border-radius: 10px;
@@ -62,22 +64,16 @@ input[type="password"]{
     background-position: right;
 }
 
-/*
-.form-input::before{
-    content: "\f0e0";
-    position:absolute;
-    font-family: "FontAwesome";
-    font-size: 30px;
-    color:#fff;
-    padding-left: 5px;
-    padding-top: 8px;
-}
+input.submitbtn{
+    height:45px;
+    width:20px;
+    background: url(../Icon/icon/icon-03.png) no-repeat;
+    background-size: 100%;
+    background-position: right;
+    border:none;
+    cursor: pointer;
+    vertical-align: top;
 
-.form-input:nth-child(2)::before{
-   content:" \f023";
-   padding-left: 8px;
 }
-*/
-
 
 
