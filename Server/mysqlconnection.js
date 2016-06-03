@@ -5,29 +5,35 @@ var app = express();
 var connection = mysql.createConnection({
 //properties
     host: 'localhost',
-    user: 'vc',
+    user: 'VC',
     password: '123',
     database: 'eventapp'
 });
 
 connection.connect(function (error) {
-    if(!!error) {
+    if(error) {
         console.log('Error');
+	console.log(error);
     } else {
         console.log('Connected');
     }
 });
 
-app.get('/', function(req, resp) {
+app.get('/connection', function(req, resp) {
     //about mysql
-    connection.query("SELECT * FROM eventapp", 
-        function (error, row, fields) {
-        if(!!err) {
+    connection.query("SELECT * FROM users", 
+        function (err, row, fields) {
+        if(err) {
             console.log('Error in the query');
         } else {
+	    console.log(row);
             console.log('successful query');
         }
     });
 });
 
-app.listen(3000);
+module.exports={
+    connection: connection
+};
+
+
