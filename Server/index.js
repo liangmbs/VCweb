@@ -28,7 +28,19 @@ app.get('/test', function(req, res){
 app.post('/registration', function(req, res){
   var body = req.body;
   console.log(body);
-  console.log(body.username);
+  var query = 'INSERT INTO users '
+	  + '(`username`,`email`, `fullname`,`password` ) '
+	  + 'VALUES ( '
+	  + '"' + body.username + '",' 
+	  + '"' + body.email + '",'
+	  + '"' + body.fullName + '",'
+	  + '"' + body.password+ '");';
+  console.log(query); 
+	
+  mysql.connection.query(query, function(err, rows, fields) {
+    if (err) throw err;
+    console.log(rows);
+  })
 
   res.end();
 });
