@@ -2,96 +2,91 @@
 
 <html>
 <head>
-    <title> </title>
-    
-    <link rel = "stylesheet" type="text/css" href="Asset/css/theme.css">
-    <link rel = "stylesheet" type = "text/css" href = "Asset/Plugins/font-awesome/css/font-awesome.css">]
-    
-    
-    <!--Font Awesome -->
-    <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    
+<title> </title>
+
+<link rel = "stylesheet" type="text/css" href="Asset/css/theme.css">
+
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+
 </head>
 
 <body>
-    <div class = "Container">
-        <form>
-            <div class="form-input">
-                <input type = "email" name = "email" placeholder="Email Address">
-            </div>
-            
-            <div class ="form-input">
-                <input type = "password" name = "password" placeholder="Password">
-            </div>
-
-           <div class = "form-input"> 
-                <input type="submit"  value=""  class="submitbtn"/>
-	   </div>
-            <div class="form-group login-group-checkbox">
-                <input type="checkbox" id="lg_remmember" name="lg_remember">
-                <label for="lg_remember">Remember Me</label>
-            </div>
-            
-            <div class = "etc-login-form">
-                <p><a href ="#">Forget your Password?</a></p>
-                <p>Not a Member? <a href="#" >Sign up Now</a>
-                </p>
-            </div>
-            
-            <div><p>Register</p></div>
-            
-            
-            <div class="form-register">
-                <label for="reg_email" class="sr-only">Email</label>
-                <input type="email" class="form-control" id="reg_email" name="reg_email" placeholder="email">
-            </div>
-            
-            <div class="form-register">
-                <label for="reg_username" class ="sr-only">Username</label>
-                <input type="username" class="form-control" id="reg_username" name="reg_username" placeholder="username">
-            </div>
-            
-            <div class="form-register">
-                <label for="reg_password" class="sr-only">Password</label>
-                <input type="password" class="form-control" id="reg_password" name="reg_password" placeholder="password">
-            </div>
-            <div class="form-register">
-				<label for="reg_password_confirm" class="sr-only">Password Confirm</label>
-				<input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password">
-            </div>
-            
-            <div class="form-register">
-                <label for="reg_fullname" class="sr-only">Full Name</label>
-                <input type="fullname" class="form-control" id="reg_fullname" name="reg_fullname" placeholder="full name">
-            </div>
-            <div class ="form-group login-group-checkbox">
-                <input type="radio" class="" name="reg_gender" id="male" placeholder="username">
-                <label for="male">male</label>
-                
-                <input type="radio" class"" name="reg_gender" id="female" placeholder="username">
-                <label for="female">female</label>
-            </div>
-            
-            <div class="form-group login-group-checkbox">
-                <input type="checkbox" class="" id="reg_agree" name="reg_agree">
-                <label for="reg_agree">I agree with <a href="#"> terms</a></label>
-            </div>
-	    <div class = "form-input"> 
-                <input type="submit"  value=""  class="submitbtn"/>
-	   </div>
-         
-        </form>
+<div class = "Container">
+  <form>
+    <div class="form-input">
+      <input type = "email" name = "email" placeholder="Email Address">
     </div>
-    
- 
-    
-    
+
+    <div class ="form-input">
+      <input type = "password" name = "password" placeholder="Password">
+    </div>
+
+    <div class = "form-input"> 
+      <input type="submit"  value=""  class="submitbtn"/>
+    </div>
+    <div class="form-group login-group-checkbox">
+      <input type="checkbox" id="lg_remmember" name="lg_remember">
+      <label for="lg_remember">Remember Me</label>
+    </div>
+  </form>
+
+  <div class = "etc-login-form">
+    <p><a href ="#">Forget your Password?</a></p>
+    <p>Not a Member? <a href="#" >Sign up Now</a>
+    </p>
+  </div>
+
+  <div><p>Register</p></div>
+
+
+  <form id="registation_form">
+    <div class="form-register">
+      <label for="reg_email" class="sr-only">Email</label>
+      <input type="email" class="form-control" id="reg_email" name="reg_email" placeholder="email">
+    </div>
+
+    <div class="form-register">
+      <label for="reg_username" class ="sr-only">Username</label>
+      <input type="username" class="form-control" id="reg_username" name="reg_username" placeholder="username">
+    </div>
+
+    <div class="form-register">
+      <label for="reg_password" class="sr-only">Password</label>
+      <input type="password" class="form-control" id="reg_password" name="reg_password" placeholder="password">
+    </div>
+    <div class="form-register">
+      <label for="reg_password_confirm" class="sr-only">Password Confirm</label>
+      <input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password">
+    </div>
+
+    <div class="form-register">
+      <label for="reg_fullname" class="sr-only">Full Name</label>
+      <input type="fullname" class="form-control" id="reg_fullname" name="reg_fullname" placeholder="full name">
+    </div>
+    <div class ="form-group login-group-checkbox">
+      <input type="radio" class="" name="reg_gender" id="male" placeholder="username">
+      <label for="male">male</label>
+
+      <input type="radio" class"" name="reg_gender" id="female" placeholder="username">
+      <label for="female">female</label>
+    </div>
+
+    <div class="form-group login-group-checkbox">
+      <input type="checkbox" class="" id="reg_agree" name="reg_agree">
+      <label for="reg_agree">I agree with <a href="#"> terms</a></label>
+    </div>
+    <div class = "form-register"> 
+      <input type="submit"  value=""  class="submitbtn"/>
+    </div>
+  </form>
+
+</div>
+<script src="js/registration.js"></script>
 </body>
-    
 </html>
 
-                    
-            
-                        
-                
+
+
+
+

@@ -1,0 +1,21 @@
+{
+  "name": "VCWeb",
+  "homepage": "https://github.com/liangmbs/VCweb",
+  "authors": [
+    "Yifan Sun <sunyifan112358@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4"
+  }
+}
