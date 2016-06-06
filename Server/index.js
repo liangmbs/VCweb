@@ -1,7 +1,9 @@
 var express = require('express');
 var path = require('path');
 var app = express();
-var mysql = require('./mysqlconnection');
+var mysql = require('./mysqlconnection.js');
+var router = express.Router();
+
 
 console.log(__dirname)
 
@@ -22,3 +24,4 @@ app.get('/test', function(req, res){
         }
     });
 })
+

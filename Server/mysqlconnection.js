@@ -1,15 +1,15 @@
 var express = require('express');
 var mysql = require('mysql');
 var app = express();
+var Bookshelf = require('bookshelf');
 
 var connection = mysql.createConnection({
 //properties
     host: 'localhost',
-    user: 'VC',
-    password: '123',
+    user: 'vc',
+    password: '12345678',
     database: 'eventapp'
 });
-
 connection.connect(function (error) {
     if(error) {
         console.log('Error');
@@ -32,8 +32,7 @@ app.get('/connection', function(req, resp) {
     });
 });
 
+
 module.exports={
     connection: connection
 };
-
-

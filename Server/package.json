@@ -9,7 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bookshelf": "^0.9.5",
+    "cookie-parser": "^1.4.3",
     "express": "^4.13.4",
-    "mysql": "^2.10.2"
+    "express-session": "^1.13.0",
+    "knex": "^0.11.5",
+    "mysql": "^2.10.2",
+    "passport": "^0.3.2"
   }
 }
