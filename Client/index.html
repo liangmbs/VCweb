@@ -22,7 +22,7 @@
       <input type = "password" name = "password" placeholder="Password">
     </div>
 
-    <div class = "form-input"> 
+    <div class = "form-input">
       <input type="submit"  value=""  class="submitbtn"/>
     </div>
     <div class="form-group login-group-checkbox">
@@ -41,6 +41,10 @@
 
 
   <form id="registation_form">
+    <div id="registration-error-box" class="error-box">
+      Sorry, username or email has been used.
+    </div>
+
     <div class="form-register">
       <label for="reg_email" class="sr-only">Email</label>
       <input type="email" class="form-control" id="reg_email" name="reg_email" placeholder="email">
@@ -78,7 +82,8 @@
       <input type="checkbox" class="" id="reg_agree" name="reg_agree">
       <label for="reg_agree">I agree with <a href="#"> terms</a></label>
     </div>
-    <div class = "form-register"> 
+
+    <div class = "form-register">
       <input type="submit"  value=""  class="submitbtn"/>
     </div>
   </form>
@@ -87,8 +92,3 @@
 <script src="js/registration.js"></script>
 </body>
 </html>
-
-
-
-
-

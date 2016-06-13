@@ -10,11 +10,11 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.resolve('../Client')));
 
 app.listen(3000, function(){
-   console.log('Listening at Port 3000 '); 
+   console.log('Listening at Port 3000 ');
 });
 
 app.get('/test', function(req, res){
-    mysql.connection.query("SELECT * FROM users", 
+    mysql.connection.query("SELECT * FROM users",
         function (err, row, fields) {
         if(err) {
             console.log('Error in the query');
@@ -31,19 +31,20 @@ app.post('/registration', function(req, res){
   var query = 'INSERT INTO users '
 	  + '(`username`,`email`, `fullname`,`password` ) '
 	  + 'VALUES ( '
-	  + '"' + body.username + '",' 
+	  + '"' + body.username + '",'
 	  + '"' + body.email + '",'
 	  + '"' + body.fullName + '",'
 	  + '"' + body.password+ '");';
-  console.log(query); 
-	
+  console.log(query);
+
   mysql.connection.query(query, function(err, rows, fields) {
-    if (err) throw err;
-    console.log(rows);
+    var return_info = {};
+    if (err) {
+      return_info.succeed = false;
+    } else {
+      return_info.succeed = true;
+    }
+    res.send(return_info);
   })
 
-  res.end();
 });
-
-
-
