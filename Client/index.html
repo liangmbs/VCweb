@@ -13,16 +13,22 @@
 
 <body>
 <div class = "Container">
-  <form>
+
+  <form id="sigin_form">
+    <div id="signin-error-box" class="error-box">
+    the password or your email is not correct
+    </div>
+
+
     <div class="form-input">
-      <input type = "email" name = "email" placeholder="Email Address">
+      <input type = "signin_email" class = "form_control" id="signin_email" name = "signin_email" placeholder="Email Address">
     </div>
 
     <div class ="form-input">
-      <input type = "password" name = "password" placeholder="Password">
+      <input type = "password" class = "form_control" id="signin_passowrd" name = "password" placeholder="Password">
     </div>
 
-    <div class = "form-input"> 
+    <div class = "form-input">
       <input type="submit"  value=""  class="submitbtn"/>
     </div>
     <div class="form-group login-group-checkbox">
@@ -41,14 +47,20 @@
 
 
   <form id="registation_form">
+    <div id="registration-error-box" class="error-box">
+      Sorry, username or email has been used.
+    </div>
+
     <div class="form-register">
       <label for="reg_email" class="sr-only">Email</label>
       <input type="email" class="form-control" id="reg_email" name="reg_email" placeholder="email">
+      <span id = "email_status"></span>
     </div>
 
     <div class="form-register">
       <label for="reg_username" class ="sr-only">Username</label>
       <input type="username" class="form-control" id="reg_username" name="reg_username" placeholder="username">
+      <span id = "name_status"></span>
     </div>
 
     <div class="form-register">
@@ -76,17 +88,14 @@
       <input type="checkbox" class="" id="reg_agree" name="reg_agree">
       <label for="reg_agree">I agree with <a href="#"> terms</a></label>
     </div>
-    <div class = "form-register"> 
+
+    <div class = "form-register">
       <input type="submit"  value=""  class="submitbtn"/>
     </div>
   </form>
 
 </div>
 <script src="js/registration.js"></script>
+<script src="js/signin.js"></script>
 </body>
 </html>
-
-
-
-
-
