@@ -56,9 +56,9 @@ app.post('/registration', function(req, res){
 
 app.post('/signin', function(req,res){
     var body = req.body;
-    var query = 'SELECT * FROM users'
+    var query = 'SELECT * FROM users '
     + 'WHERE email = '
-    + '"' + body.email + '",'
+    + '"' + body.email + '"'
     + 'AND password = '
     + '"' + body.password + '";';
     console.log(query);
@@ -73,7 +73,7 @@ app.post('/signin', function(req,res){
             }else {
                 return_info.succed = true;
             }
-            res.sen(return_info);
+            res.send(return_info);
         }
     });
 });

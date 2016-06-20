@@ -22,7 +22,7 @@ function validateForm(data){
 function getDataFromForm(){
     data = {};
     data.email = $('#signin_email').val();
-    data.pasword = $('#signin_password').val();
+    data.password = $('#signin_password').val();
     return data;
 }
 
