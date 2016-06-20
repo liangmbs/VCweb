@@ -1,7 +1,4 @@
-$('#form-login').submit(function(event){
-   data = {};
-});
-
+(function(){
 
 $('#signin-error-box').hide();
 
@@ -40,14 +37,16 @@ function doSignin(data){
    });
 }
 
-$('signin_form').submit(function(event){
+$('#signin_form').submit(function(event){
 
- data = getDataFromForm();
+  data = getDataFromForm();
 
- var valid = validateForm(data);
+  var valid = validateForm(data);
 
- if (valid){
-   doSignin(data);
- }
- return false;
+  if (valid){
+    doSignin(data);
+  }
+  return false;
 })
+
+})();

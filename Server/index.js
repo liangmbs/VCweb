@@ -52,6 +52,7 @@ app.post('/registration', function(req, res){
       res.send(return_info);
     }
   });
+});
 
 app.post('/signin', function(req,res){
     var body = req.body;
@@ -74,5 +75,5 @@ app.post('/signin', function(req,res){
             }
             res.sen(return_info);
         }
-    })    
+    });
 });
