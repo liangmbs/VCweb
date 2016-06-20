@@ -1,7 +1,6 @@
 $('#form-login').submit(function(event){
-  
   data = {};
-  data.
+});
 
 
 $('#signin-error-box').hide();

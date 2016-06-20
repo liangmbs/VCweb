@@ -38,21 +38,19 @@ app.post('/registration', function(req, res){
   console.log(query);
 
   mysql.connection.query(query, function(err, rows, fields) {
-    if (err){ 
-    	res.json(err);
-	console.log(err);
-	}
-    else
-    	res.json({user : body.username});
-    // console.log(rows);
-  })
-    var return_info = {};
-    if (err) {
-      return_info.succeed = false;
+    if (err){
+      res.json(err);
+      console.log(err);
     } else {
-      return_info.succeed = true;
+      res.json({user : body.username});
+      var return_info = {};
+      if (err) {
+        return_info.succeed = false;
+      } else {
+        return_info.succeed = true;
+      }
+      res.send(return_info);
     }
-    res.send(return_info);
-  })
+  });
 
 });
