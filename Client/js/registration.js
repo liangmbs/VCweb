@@ -1,3 +1,5 @@
+(function(){
+  
 $('#registration-error-box').hide();
 
 
@@ -39,6 +41,7 @@ function getDataFromForm() {
   data.username = $('#reg_username').val();
   data.password = $('#reg_password').val();
   data.fullName = $('#reg_fullname').val();
+
   return data;
 }
 
@@ -60,3 +63,5 @@ $('#registation_form').submit(function(event){
 
   return false;
 })
+
+})();

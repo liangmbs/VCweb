@@ -4,6 +4,9 @@ var app = express();
 var mysql = require('./mysqlconnection.js');
 var router = express.Router();
 var bodyParser = require('body-parser');
+var jwt = require('jsonwebtoken');
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -38,15 +41,47 @@ app.post('/registration', function(req, res){
   console.log(query);
 
   mysql.connection.query(query, function(err, rows, fields) {
-    var return_info = {};
-    if (err) {
-      return_info.succeed = false;
+    if (err){
+      res.json(err);
+      console.log(err);
     } else {
-      return_info.succeed = true;
+      var return_info = {};
+      if (err) {
+        return_info.succeed = false;
+      } else {
+        return_info.succeed = true;
+          
+      }
+      res.send(return_info);
     }
-    res.send(return_info);
-  })
+  });
+});
 
+app.post('/signin', function(req,res){
+    var body = req.body;
+    var query = 'SELECT * FROM users '
+    + 'WHERE email = '
+    + '"' + body.email + '"'
+    + 'AND password = '
+    + '"' + body.password + '";';
+    console.log(query);
+    mysql.connection.query(query, function(err, rows, fields){        
+        var return_info = {}
+        if(rows.length == 0 || err) {
+            return_info.succeed = false;
+            
+        }else {
+            return_info.succeed = true;
+            return_info.token = jwt.sign(
+                {
+                    userid: rows[0].user_id, 
+                    expire: Date.now()/1000 + 3600
+                }, 
+                'liang');
+        }
+        res.json(return_info);
+        
+    });
 });
 
 app.post('/signin', function(req,res){
