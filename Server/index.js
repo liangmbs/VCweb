@@ -38,11 +38,14 @@ app.post('/registration', function(req, res){
   console.log(query); 
 	
   mysql.connection.query(query, function(err, rows, fields) {
-    if (err) throw err;
-    console.log(rows);
+    if (err){ 
+    	res.json(err);
+	console.log(err);
+	}
+    else
+    	res.json({user : body.username});
+    // console.log(rows);
   })
-
-  res.end();
 });
 
 
