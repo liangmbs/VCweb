@@ -48,3 +48,8 @@ app.post('/registration', function(req, res){
   })
 
 });
+
+app.post('/signin', function(req,res){
+  var body = req.body;
+  console.log(body);
+})
