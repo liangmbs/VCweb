@@ -28,11 +28,15 @@ function getDataFromForm(){
 
 function doSignin(data){
   $.post('/signin',data)
-   .done(function(data) {
-     if(data.succeed){
+   .done(function(return_info) {
+     if(return_info.succeed){
        //TODO
+         localStorage.setItem("token", return_info.token);
+         console.log(return_info);
      }else {
        //TODO
+        console.log(return_info);
+
      }
    });
 }

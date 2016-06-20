@@ -4,6 +4,9 @@ var app = express();
 var mysql = require('./mysqlconnection.js');
 var router = express.Router();
 var bodyParser = require('body-parser');
+var jwt = require('jsonwebtoken');
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -47,6 +50,7 @@ app.post('/registration', function(req, res){
         return_info.succeed = false;
       } else {
         return_info.succeed = true;
+          
       }
       res.send(return_info);
     }
@@ -64,9 +68,16 @@ app.post('/signin', function(req,res){
     mysql.connection.query(query, function(err, rows, fields){        
         var return_info = {}
         if(rows.length == 0 || err) {
-            return_info.succed = false;
+            return_info.succeed = false;
+            
         }else {
-            return_info.succed = true;
+            return_info.succeed = true;
+            return_info.token = jwt.sign(
+                {
+                    userid: rows[0].user_id, 
+                    expire: Date.now()/1000 + 3600
+                }, 
+                'liang');
         }
         res.json(return_info);
         

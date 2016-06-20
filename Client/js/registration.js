@@ -42,11 +42,6 @@ function getDataFromForm() {
   data.password = $('#reg_password').val();
   data.fullName = $('#reg_fullname').val();
 
-
-  $.post('/registration', data)
-    .done(function(data) {
-      alert("Returned!");
-    })
   return data;
 }
 
