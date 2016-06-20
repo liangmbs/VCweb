@@ -42,7 +42,6 @@ app.post('/registration', function(req, res){
       res.json(err);
       console.log(err);
     } else {
-      res.json({user : body.username});
       var return_info = {};
       if (err) {
         return_info.succeed = false;
@@ -62,18 +61,14 @@ app.post('/signin', function(req,res){
     + 'AND password = '
     + '"' + body.password + '";';
     console.log(query);
-    mysql.connection.query(query, function(err, rows, fields){
-        if(err){
-            res.json(err);
-            console.log(err);
-        }else{
-            var return_info = {};
-            if(err) {
-                return_info.succed = false;
-            }else {
-                return_info.succed = true;
-            }
-            res.send(return_info);
+    mysql.connection.query(query, function(err, rows, fields){        
+        var return_info = {}
+        if(rows.length == 0 || err) {
+            return_info.succed = false;
+        }else {
+            return_info.succed = true;
         }
+        res.json(return_info);
+        
     });
 });
