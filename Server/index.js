@@ -80,11 +80,20 @@ app.post('/signin', function(req,res){
                 'liang');
         }
         res.json(return_info);
-        
     });
 });
 
-app.post('/signin', function(req,res){
-  var body = req.body;
-  console.log(body);
+
+app.route('/profile')
+    .get(function(req, res){
+        //var decoded = jwt.verify(body.token, 'liang');
+        //console.log(decoded);
+        res.sendFile('Client/Profile.html', {root:path.join(__dirname, '../')});
+        //console.log(req.body);
 })
+    .post(function(req,res){
+        var body = req.body;
+        console.log(req.body);
+})
+
+
