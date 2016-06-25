@@ -1,16 +1,18 @@
 (function(){
     
     function ReturnData(data){
-        $('.username').val() = data.username;
+        $('#username').val(data.username);
     }
     
    function SendRequesttoServer(){
         
-        $.post('/profile', localStorage.token)
+        $.post('/profile', localStorage)
         .done(function(data){
-            console.log(data);
+            console.log(data);        
+            ReturnData(data);
         })
     }
     
+    SendRequesttoServer();
    
 })();

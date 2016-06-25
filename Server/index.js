@@ -86,14 +86,27 @@ app.post('/signin', function(req,res){
 
 app.route('/profile')
     .get(function(req, res){
-        //var decoded = jwt.verify(body.token, 'liang');
-        //console.log(decoded);
-        res.sendFile('Client/Profile.html', {root:path.join(__dirname, '../')});
-        //console.log(req.body);
-})
+        res.sendFile('Client/Profile.html', 
+                     {root:path.join(__dirname, '../')});
+    })
     .post(function(req,res){
         var body = req.body;
-        console.log(req.body);
-})
+        jwt.verify(body.token, 'liang', function(err, decoded){
+            var return_info = {};
+            if(err || decoded.expire < Date.now()/1000){
+                return_info.succeed = false
+            } else {
+                var query = 'SELECT * FROM users'
+                + ' WHERE user_id = ' 
+                + '"' + decoded.userid + '";';
+                console.log("the query is " + query);
+                mysql.connection.query(query, function(err, rows, fields){
+                    return_info.succeed = true;
+                    return_info.username = rows[0].username;
+                    res.json(return_info);
+                })
+            }
+        });
+    })
 
 
