@@ -25,8 +25,8 @@ body{
 
 /* 2. Login */
 #Container{
-    height: 350px;
-    width:500px;
+    height: 320px;
+    width: 500px;
     text-align: center;
     background-color: rgba(234, 150, 34,0.5);
     border-radius: 4px;
@@ -39,6 +39,15 @@ body{
   border:1px solid rgba(0, 0, 0, 0.4);
 }
 
+#section{
+    width: 500px;
+    display: none;
+    text-align: center;
+    background-color: rgba(234, 150, 34,0.5);
+    border-radius: 4px;
+    margin-top: 10px;
+    margin:0 auto;
+}
 
 input[type="email"]{
     display:inline-block;

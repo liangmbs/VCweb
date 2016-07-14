@@ -1,3 +1,4 @@
+/*
 var minheight = 350;
 var maxheight = 800;
 var time = 1000;
@@ -27,3 +28,11 @@ window.onload = function() {
         },1);
     };
 };
+
+*/
+
+$(document).ready(function(){
+    $("#slide").click(function(){
+        $("#section").slideToggle();    
+    });   
+});
