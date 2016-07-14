@@ -12,9 +12,10 @@
 </head>
 
 <body>
-<div class = "Container">
+<div id = "Container">
 
   <form id="signin_form">
+      
     <div id="signin-error-box" class="error-box">
       the password or your email is not correct
     </div>
@@ -39,63 +40,64 @@
 
   <div class = "etc-login-form">
     <p><a href ="#">Forget your Password?</a></p>
-    <p>Not a Member? <a href="#" >Sign up Now</a>
-    </p>
   </div>
-
-  <div><p>Register</p></div>
-
-
-  <form id="registation_form">
-    <div id="registration-error-box" class="error-box">
-      Sorry, username or email has been used.
+    
+    <div id = "section_btn_holder">
+     <button id= "slide"> Not a Member? Register Now! </button>
     </div>
+   
+            <div><p>Register</p></div>
+              <form id="registation_form">
+                <div id="registration-error-box" class="error-box">
+                  Sorry, username or email has been used.
+                </div>
+                  
+                    <div class="form-register">
+                      <label for="reg_email" class="sr-only">Email</label>
+                      <input type="email" class="form-control" id="reg_email" name="reg_email" placeholder="email">
+                      <span id = "email_status"></span>
+                    </div>
 
-    <div class="form-register">
-      <label for="reg_email" class="sr-only">Email</label>
-      <input type="email" class="form-control" id="reg_email" name="reg_email" placeholder="email">
-      <span id = "email_status"></span>
-    </div>
+                    <div class="form-register">
+                      <label for="reg_username" class ="sr-only">Username</label>
+                      <input type="username" class="form-control" id="reg_username" name="reg_username" placeholder="username">
+                      <span id = "name_status"></span>
+                    </div>
 
-    <div class="form-register">
-      <label for="reg_username" class ="sr-only">Username</label>
-      <input type="username" class="form-control" id="reg_username" name="reg_username" placeholder="username">
-      <span id = "name_status"></span>
-    </div>
+                    <div class="form-register">
+                      <label for="reg_password" class="sr-only">Password</label>
+                      <input type="password" class="form-control" id="reg_password" name="reg_password" placeholder="password">
+                    </div>
+                    <div class="form-register">
+                      <label for="reg_password_confirm" class="sr-only">Password Confirm</label>
+                      <input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password">
+                    </div>
 
-    <div class="form-register">
-      <label for="reg_password" class="sr-only">Password</label>
-      <input type="password" class="form-control" id="reg_password" name="reg_password" placeholder="password">
-    </div>
-    <div class="form-register">
-      <label for="reg_password_confirm" class="sr-only">Password Confirm</label>
-      <input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password">
-    </div>
+                    <div class="form-register">
+                      <label for="reg_fullname" class="sr-only">Full Name</label>
+                      <input type="fullname" class="form-control" id="reg_fullname" name="reg_fullname" placeholder="full name">
+                    </div>
+                    <div class ="form-group login-group-checkbox">
+                      <input type="radio" class="" name="reg_gender" id="male" placeholder="username">
+                      <label for="male">male</label>
 
-    <div class="form-register">
-      <label for="reg_fullname" class="sr-only">Full Name</label>
-      <input type="fullname" class="form-control" id="reg_fullname" name="reg_fullname" placeholder="full name">
-    </div>
-    <div class ="form-group login-group-checkbox">
-      <input type="radio" class="" name="reg_gender" id="male" placeholder="username">
-      <label for="male">male</label>
+                      <input type="radio" class"" name="reg_gender" id="female" placeholder="username">
+                      <label for="female">female</label>
+                    </div>
 
-      <input type="radio" class"" name="reg_gender" id="female" placeholder="username">
-      <label for="female">female</label>
-    </div>
+                    <div class="form-group login-group-checkbox">
+                      <input type="checkbox" class="" id="reg_agree" name="reg_agree">
+                      <label for="reg_agree">I agree with <a href="#"> terms</a></label>
+                    </div>
 
-    <div class="form-group login-group-checkbox">
-      <input type="checkbox" class="" id="reg_agree" name="reg_agree">
-      <label for="reg_agree">I agree with <a href="#"> terms</a></label>
-    </div>
-
-    <div class = "form-register">
-      <input type="submit"  value=""  class="submitbtn"/>
-    </div>
-  </form>
-
-</div>
+                    <div class = "form-register">
+                      <input type="submit"  value=""  class="submitbtn"/>
+                    </div>
+                </form>
+</div> 
+    
 <script src="js/registration.js"></script>
 <script src="js/signin.js"></script>
+<script src="js/toogle.js"></script>
 </body>
 </html>
